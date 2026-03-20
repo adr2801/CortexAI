@@ -24,9 +24,8 @@ jobs:
 
       - name: Build APK
         run: |
-          yes | flet build apk --project "Cortex AI"
-
-
+          yes | flet build apk --project "Cortex AI" --icon "icon.png"
+      
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

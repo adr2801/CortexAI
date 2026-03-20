@@ -24,7 +24,13 @@ jobs:
 
       - name: Build APK
         run: |
-          yes | flet build apk --project "Cortex AI" --icon "icon.png"
+          # Création du dossier assets et déplacement de l'icône par commande
+          mkdir -p assets
+          cp icon.png assets/icon.png
+          
+          # Lancement du build
+          yes | flet build apk --project "Cortex AI"
+
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
